@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cafe</title>
+    <style>
+        body {
+            font-family: "Inconsolata", sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+            padding: 15px;
+            color: white;
+            width: 100%;
+            margin-left: -45px;
+            position: fixed;
+            z-index: 100;
+        }
+
+        .nav div {
+            width: 400px;
+            height: 35px;
+            vertical-align: middle;
+        }
+
+        .nav div li {
+            list-style-type: none;
+            margin-left: -10%;
+            margin-top: 3%;
+        }
+
+        .nav div li a {
+            text-decoration: none;
+            font-size: 14px;
+            color: white;
+        }
+
+        .nav1 a {
+            margin-left: 180px;
+        }
+
+        .nav1:hover {
+            color: black;
+            background-color: grey;
+        }
+
+        .bgimg {
+            margin-top: -16px;
+            margin-left: -5px;
+            position: relative;
+            filter: grayscale(60%);
+        }
+
+        .bgimg .title {
+            position: absolute;
+            top: 30%;
+            left: 45%;
+            font-size: 72px;
+            color: white;
+        }
+
+        .bgimg .timings {
+            position: absolute;
+            top: 87%;
+            margin: 20px;
+            padding: 5px;
+            background-color: black;
+            color: white;
+            font-size: 14px;
+            font-family: "Inconsolata", sans-serif;
+        }
+
+        .bgimg .address {
+            position: absolute;
+            top: 87%;
+            margin: 20px;
+            right: 1%;
+            font-size: 14px;
+            color: white;
+        }
+
+        
+
+        .body {
+            margin-left: 28%;
+            width: 45%;
+        }
+
+        .heading {
+            display: inline-block;
+            margin: 30px;
+            margin-left: 35%;
+            font-size: 24px;
+            color: white;
+            background-color: black;
+        }
+
+        .para {
+            text-align: justify;
+            line-height: 30px;
+            word-spacing: 7px;
+            font-size: 18px;
+        }
+
+        .t-box {
+            background-color: #f1f1f1;
+            position: relative;
+        }
+
+        .box {
+            display: inline-block;
+            background-color: grey;
+            width: 1%;
+            height: 100px;
+        }
+
+        .sub-box {
+            position: absolute;
+            display: inline-block;
+            line-height: 30px;
+            margin-top: 1%;
+            padding-left: 2%;
+        }
+
+        .image {
+            margin-top: 3%;
+        }
+
+        .image img {
+            width: 100%;
+        }
+
+        .menu-wrapper {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            background-color: #f1f1f1;
+            box-shadow: 10px 10px 10px;
+        }
+
+        .menu-tabs label {
+            padding: 10px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        .menu-tabs label:hover {
+            background-color: grey;
+        }
+
+        #eat:checked~.menu-tabs label[for="eat"],
+        #drink:checked~.menu-tabs label[for="drink"] {
+            background-color: grey;
+            color: white;
+            width: 130px;
+        }
+
+        .menu-content {
+            margin-top: 10px;
+        }
+
+        .component {
+            display: none;
+            text-align: left;
+            margin: 10px auto;
+            width: 92%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px;
+        }
+
+
+        #eat:checked~.menu-content .eat-content {
+            display: block;
+        }
+
+        #drink:checked~.menu-content .drink-content {
+            display: block;
+        }
+
+        .content1 {
+            opacity: 0.4;
+        }
+
+        .c1 {
+            margin-top: 5%;
+        }
+
+        .form input {
+            width: 99%;
+            margin-bottom: 5%;
+            height: 50px;
+            font-size: 18px;
+        }
+
+        .btn1 {
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 5%;
+            width: 100%;
+            height: 100px;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding-top: 5%;
+            font-size: 20px;
+
+            a {
+                color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="nav">
+                    <div class="nav1">
+                        <li><a href="#home" class="btn">HOME</a></li>
+                    </div>
+                    <div class="nav1">
+                        <li><a href="#about" class="btn">ABOUT</a></li>
+                    </div>
+                    <div class="nav1">
+                        <li><a href="#menu" class="btn">MENU</a></li>
+                    </div>
+                    <div class="nav1">
+                        <li><a href="#where" class="btn">WHERE</a></li>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-body">
+            <div class="bgimg" id="home">
+                <img src="https://www.w3schools.com/w3images/coffeehouse.jpg" alt="" width="99.8%" height="500px" />
+                <div class="title"><span style="margin-left:20%;">the</span> <br>Food</div>
+                <div class="timings">open from 6am to 5pm</div>
+                <div class="address">15 Adr street, 5015</div>
+            </div>
+
+            <div class="body">
+                <div class="heading" id="about">ABOUT THE CAFE</div>
+                <div class="para">
+                    <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+                </div>
+                <div class="para">In addition to our full espresso and brew bar menu, we serve fresh made-to-order
+                    breakfast
+                    and
+                    lunch sandwiches, as well as a selection of sides and salads and other good stuff.</div>
+
+                <div class="t-box">
+                    <div class="box"></div>
+                    <div class="sub-box">
+                        "Use products from nature for what it's worth - but never too early, nor too late." Fresh is the
+                        new
+                        sweet.
+                        <br />
+                        Chef, Coffeeist and Owner: Liam Brown
+                    </div>
+                </div>
+
+                <div class="image">
+                    <img src="https://www.w3schools.com/w3images/coffeeshop.jpg" alt="" />
+                </div>
+
+                <div class="para"><strong>Opening hours:</strong> everyday from 6am to 5pm.</div>
+                <div class="para"><strong>Address:</strong> 15 Adr street, 5015, NY</div>
+
+                <div class="heading" style="padding:5px;" id="menu">THE MENU</div>
+
+                <div class="menu-wrapper" >
+                    <input type="radio" id="eat" name="menu" checked />
+                    <input type="radio" id="drink" name="menu" />
+
+                    <div class="menu-tabs">
+                        <label for="eat">EAT</label>
+                        <label for="drink">DRINK</label>
+                    </div>
+
+                    <div class="menu-content">
+                        <div class="component eat-content">
+                            <div class="c1">
+                                <h3>Bread Basket</h3>
+                                <p class="content1">Assortment of fresh baked fruit breads and muffins 5.50</p>
+                            </div>
+                            <div class="c1">
+                                <h3>Honey Almond Granola with Fruits</h3>
+                                <p class="content1">Natural cereal of honey toasted oats, raisins, almonds and dates
+                                    7.00
+                                </p>
+                            </div>
+                            <div class="c1">
+                                <h3>Belgian Waffle</h3>
+                                <p class="content1">Vanilla flavored batter with malted flour 7.50</p>
+                            </div>
+                            <div class="c1">
+                                <h3>Scrambled eggs</h3>
+                                <p class="content1">Scrambled eggs, roasted red pepper and garlic, with green onions
+                                    7.50
+                                </p>
+                            </div>
+                            <div class="c1">
+                                <h3>Blueberry Pancakes</h3>
+                                <p class="content1">With syrup, butter and lots of berries 8.50</p>
+                            </div>
+                        </div>
+                        <div class="component drink-content">
+                            <div class="c1">
+                                <h3>Coffee</h3>
+                                <p class="content1">Regular coffee 2.50</p>
+                            </div>
+                            <div class="c1">
+                                <h3>Chocolato</h3>
+                                <p class="content1">Chocolate espresso with milk 4.50</p>
+                            </div>
+                            <div class="c1">
+                                <h3>Corretto</h3>
+                                <p class="content1">Whiskey and coffee 5.00</p>
+                            </div>
+                            <div class="c1">
+                                <h3>Iced tea</h3>
+                                <p class="content1">Hot tea, except not hot 3.00</p>
+                            </div>
+                            <div class="c1">
+                                <h3>Soda</h3>
+                                <p class="content1">Coke, Sprite, Fanta, etc. 2.50</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="https://www.w3schools.com/w3images/coffeehouse2.jpg" alt="" />
+                </div>
+                <div class="heading" style="padding:2px;" id="where">WHERE TO FIND US</div>
+                <p>Find us at some address at some place.</p>
+                <div class="image">
+                    <img src="https://www.w3schools.com/w3images/map.jpg" style="filter:grayscale(50%)" alt="">
+                </div>
+                <p style="font-size: 20px;text-align: justify;"><span
+                        style="background-color: black;color:white;padding: 4px;">FYI!</span> We offer full-service
+                    catering
+                    for any event, large or small. We understand your needs and we will cater the food to satisfy the
+                    biggerst criteria of them all, both look and taste.</p>
+                <p style="font-size: 20px;">
+                    <strong>Reserve</strong> a table, ask for today's special or just send us a message:
+                </p>
+                <form action="" class="form">
+                    <input type="text" placeholder="Name"><br>
+                    <input type="text" placeholder="How Many People"><br>
+                    <input type="datetime-local" value="2020-11-16T20:00">
+                    <input type="text" placeholder="Message\Special requirements">
+                </form>
+                <button class="btn1" type="submit" style="background-color: black;">SEND MESSAGE</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp"> w3.css</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
